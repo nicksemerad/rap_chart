@@ -1,7 +1,21 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+
+5.times do
+ chart = Chart.create(
+   name: Faker::Coffee.blend_name
+ )
+  3.times do
+    artist = Artist.create(
+      name: Faker::TvShows::RickAndMorty.character,
+      genre: Faker::TvShows::StarTrek.specie,
+      group: false,
+      chart_id: chart.id
+    )
+    Song.create(
+      name: Faker::Kpop.boy_bands,
+      album: Faker::Kpop.ii_groups,
+      length: Faker::Code.npi,
+      artist_id: artist.id
+    )
+  end
+end
+puts 'Data has been seeded'

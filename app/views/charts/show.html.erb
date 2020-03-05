@@ -1,5 +1,13 @@
 <h1> <%=@chart.name%> </h1>
 </br>
+<h2> Artists </h2>
+<ul>
+  <% @chart.artists.each do |artist| %>
+    <li>
+    <%= link_to artist.name, artist%>
+    </li>
+  <% end %>
+</ul>
 
 <%= link_to 'Edit Chart', edit_chart_path(@chart) %>
 </br>

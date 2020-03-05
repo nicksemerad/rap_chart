@@ -1,3 +1,3 @@
 class Chart < ApplicationRecord
-  has_many :Artists
+  has_many :artists
 end
