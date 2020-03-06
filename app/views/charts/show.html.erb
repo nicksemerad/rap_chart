@@ -4,7 +4,7 @@
 <ul>
   <% @chart.artists.each do |artist| %>
     <li>
-    <%= link_to artist.name, artist%>
+    <%= link_to artist.name, [@chart, @artist]%>
     </li>
   <% end %>
 </ul>
@@ -16,3 +16,5 @@
 </br>
 
 <%= link_to 'View Artists', chart_artists_path(@chart) %>
+
+

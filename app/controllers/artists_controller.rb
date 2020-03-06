@@ -3,14 +3,14 @@ class ArtistsController < ApplicationController
   before_action :set_artist, only: [:show, :edit, :update, :destroy]
   
   def index
-    @artists = Artist.all
+    @artists = @chart.artists
   end
 
   def show
   end
 
   def new
-    @artist = @chart.artist.new
+    @artist = @chart.artists.new
   end
 
   def create
